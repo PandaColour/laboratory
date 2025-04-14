@@ -1,0 +1,37 @@
+14:24:06.599 [main] INFO  c.q.smallbank.SmallBankApplication - Starting SmallBankApplication on zhangjiaxu with PID 30356 (D:\github\laboratory\lecture\SmallBank\target\classes started by zhangjiaxu-jk in D:\github\laboratory)
+14:24:06.607 [main] INFO  c.q.smallbank.SmallBankApplication - No active profile set, falling back to default profiles: default
+14:24:07.983 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:24:07.995 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:24:08.000 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:24:08.000 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+14:24:08.147 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:24:08.147 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1507 ms
+14:24:08.520 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:24:08.709 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:24:08.719 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:24:08.719 [main] INFO  c.q.smallbank.SmallBankApplication - Started SmallBankApplication in 2.473 seconds (JVM running for 3.953)
+14:24:20.671 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:24:20.671 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:24:20.680 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+14:24:20.757 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:24:20.968 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:48:55.193 [Thread-6] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:48:55.198 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:48:55.209 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+17:20:01.307 [main] INFO  c.q.smallbank.SmallBankApplication - Starting SmallBankApplication on zhangjiaxu with PID 11928 (D:\github\laboratory\lecture\SmallBank\target\classes started by zhangjiaxu-jk in D:\github\laboratory)
+17:20:01.310 [main] INFO  c.q.smallbank.SmallBankApplication - No active profile set, falling back to default profiles: default
+17:20:02.221 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+17:20:02.231 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:20:02.236 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:20:02.237 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+17:20:02.377 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:20:02.378 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1034 ms
+17:20:02.721 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+17:20:02.974 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:20:02.997 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+17:20:02.999 [main] INFO  c.q.smallbank.SmallBankApplication - Started SmallBankApplication in 2.11 seconds (JVM running for 3.366)
+17:20:21.424 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:20:21.425 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:20:21.434 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+17:20:21.544 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:20:21.637 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
