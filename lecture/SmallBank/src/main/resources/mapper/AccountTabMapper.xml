@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qihoo.smallbank.database.mapper.AccountTabMapper">
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qihoo.smallbank.database.entity.AccountTab" id="BaseResultMap">
+            <result property="id" column="id"/>
+            <result property="accountCode" column="account_code"/>
+            <result property="internalCode" column="internal_code"/>
+            <result property="preBalance" column="pre_balance"/>
+            <result property="currentBalance" column="current_balance"/>
+            <result property="latestSeqNo" column="latest_seq_no"/>
+            <result property="version" column="version"/>
+            <result property="createdAt" column="created_at"/>
+            <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,        account_code,        internal_code,        pre_balance,        current_balance,        latest_seq_no,        version,        created_at,        updated_at    </sql>
+
+    <select id="findById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from account_tab
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+    <select id="findByAccountCodeForUpdate" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from account_tab
+        <where>
+            account_code = #{accountCode}
+        </where>
+        for update
+    </select>
+
+    <insert id="insert" parameterType="com.qihoo.smallbank.database.entity.AccountTab">
+        insert into account_tab
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="accountCode != null">
+                account_code,
+            </if>
+            <if test="internalCode != null">
+                internal_code,
+            </if>
+            <if test="preBalance != null">
+                pre_balance,
+            </if>
+            <if test="currentBalance != null">
+                current_balance,
+            </if>
+            <if test="latestSeqNo != null">
+                latest_seq_no,
+            </if>
+            <if test="version != null">
+                version,
+            </if>
+            <if test="createdAt != null">
+                created_at,
+            </if>
+            <if test="updatedAt != null">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="accountCode != null">
+                #{accountCode,jdbcType=VARCHAR},
+            </if>
+            <if test="internalCode != null">
+                #{internalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="preBalance != null">
+                #{preBalance,jdbcType=FLOAT},
+            </if>
+            <if test="currentBalance != null">
+                #{currentBalance,jdbcType=FLOAT},
+            </if>
+            <if test="latestSeqNo != null">
+                #{latestSeqNo,jdbcType=VARCHAR},
+            </if>
+            <if test="version != null">
+                #{version,jdbcType=INTEGER},
+            </if>
+            <if test="createdAt != null">
+                #{createdAt,jdbcType=DATE},
+            </if>
+            <if test="updatedAt != null">
+                #{updatedAt,jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.qihoo.smallbank.database.entity.AccountTab">
+        update account_tab
+        <set>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="accountCode != null">
+                account_code = #{accountCode,jdbcType=VARCHAR},
+            </if>
+            <if test="internalCode != null">
+                internal_code = #{internalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="preBalance != null">
+                pre_balance = #{preBalance,jdbcType=FLOAT},
+            </if>
+            <if test="currentBalance != null">
+                current_balance = #{currentBalance,jdbcType=FLOAT},
+            </if>
+            <if test="latestSeqNo != null">
+                latest_seq_no = #{latestSeqNo,jdbcType=VARCHAR},
+            </if>
+            <if test="version != null">
+                version = #{version,jdbcType=INTEGER},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt,jdbcType=DATE},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt,jdbcType=DATE},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+    <update id="updateCheckVersion" parameterType="com.qihoo.smallbank.database.entity.AccountTab">
+        update account_tab
+        <set>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="accountCode != null">
+                account_code = #{accountCode,jdbcType=VARCHAR},
+            </if>
+            <if test="internalCode != null">
+                internal_code = #{internalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="preBalance != null">
+                pre_balance = #{preBalance,jdbcType=FLOAT},
+            </if>
+            <if test="currentBalance != null">
+                current_balance = #{currentBalance,jdbcType=FLOAT},
+            </if>
+            <if test="latestSeqNo != null">
+                latest_seq_no = #{latestSeqNo,jdbcType=VARCHAR},
+            </if>
+            <if test="version != null">
+                version = #{version,jdbcType=INTEGER} + 1,
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt,jdbcType=DATE},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt,jdbcType=DATE},
+            </if>
+        </set>
+        <where>
+            id = #{id} and version = #{version}
+        </where>
+    </update>
+
+    <delete id="delete">
+        delete from account_tab
+        <where>
+            id = #{id}
+        </where>
+    </delete>
+
+</mapper>

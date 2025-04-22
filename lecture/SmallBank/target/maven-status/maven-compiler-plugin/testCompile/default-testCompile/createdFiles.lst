@@ -1,0 +1,4 @@
+com\qihoo\smallbank\transcation\model\NormalTradeTest.class
+com\qihoo\smallbank\service\impl\NormalTradeServiceImplTest.class
+com\qihoo\smallbank\transcation\model\AccountTest.class
+com\qihoo\smallbank\transcation\TradeEntryTest.class

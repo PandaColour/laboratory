@@ -1,0 +1,4 @@
+com\qihoo\auto\component\DatabaseConnectionManager.class
+com\qihoo\auto\Application.class
+com\qihoo\auto\controller\HelloController.class
+com\qihoo\auto\component\RestTemplateConfig.class
