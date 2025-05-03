@@ -1,4 +1,5 @@
 import os
+import re
 from pathlib import Path
 from openai import OpenAI
 
@@ -34,8 +35,15 @@ def scan_java_files(model_path):
 
                 Path(test_file_path).parent.mkdir(parents=True, exist_ok=True)
                 unit_test_content = generate_test_cases(content=content)
+
+                test_class_name = Path(test_file_path).name.replace(".java", "")
+                matches = re.findall(r"```java(.*?)```", unit_test_content, re.DOTALL)
+                code = ""
+                for match in reversed(matches):
+                    if f" {test_class_name} " in match:
+                        code = match.strip()
                 with open(test_file_path, "w", encoding="utf-8") as f:
-                    f.write(unit_test_content)
+                    f.write(code)
 
                 print(test_file_path)
                 print("生成单元测试成功!")
@@ -59,10 +67,6 @@ def generate_test_cases(content):
         messages=messages
     )
     code = completion.choices[0].message.content
-    start_index = code.find("```java")
-    end_index = code.rfind("```")
-    if start_index != -1 and end_index != -1:
-        code = code[start_index + len("```java"): end_index]
     return code
 
 

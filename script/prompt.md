@@ -3,7 +3,7 @@
 2. 主动使用给测试类加上@RunWith(MockitoJUnitRunner.class)注解,不要使用过期的MockitoAnnotations.initMocks(this)
 [BAD EXAMPLE]
 ```
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
    
@@ -16,7 +16,7 @@ class DemoTest {
 [GOOD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
 }
@@ -25,7 +25,7 @@ class DemoTest {
 [BAD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
     
@@ -38,7 +38,7 @@ class DemoTest {
 [GOOD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
     
@@ -49,9 +49,10 @@ class DemoTest {
 }
 ```
 或者
+[GOOD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
 
@@ -72,7 +73,7 @@ class DemoTest {
 [BAD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
     
@@ -86,7 +87,7 @@ class DemoTest {
 [GOOD EXAMPLE]
 ```
 @RunWith(MockitoJUnitRunner.class)
-class DemoTest {
+public class DemoTest {
     @InjectMocks
     private Demo demo;
     
@@ -96,9 +97,18 @@ class DemoTest {
     }
 }
 ```
-5. 每个文件都引入必须的依赖包
+5. 每个文件都引入必须的依赖包,设置正确的package
+[BAD EXAMPLE]
+```
+import org.mockito.Mock;
+public class DemoTest {
+   
+}
+```
 [GOOD EXAMPLE]
 ```
+package com.example;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -110,7 +120,7 @@ import static org.junit.Assert.*;
 7. 使用Arrays.asList Collections.singletonList等方法来创建集合
 [BAD EXAMPLE]
 ```
-class DemoTest {
+public class DemoTest {
     @Test
     public void testSomething() {
         Demo demo = new Demo();
